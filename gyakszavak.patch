@@ -1,0 +1,57 @@
+--- hscompr.c	2015-07-02 13:45:00 +0000
++++ hscompr2.c	2015-07-03 09:41:32 +0000
+@@ -3,22 +3,42 @@
+ #include <stdbool.h>
+ #include <string.h>
+ 
+-#define MAXW 96
++#define MAXW 224
+ 
+ #define FALSE false
+ #define TRUE  true
+ 
+-char *hwords[MAXW] = { " a "," az", " be", " de", " el", " és ", " ha", " is",
+- " jó", " ki", " le", " mi", " új", "akar", "aki", "akkor", "ala", "áll",
+- "amely", "ami", "arr", "bár", "csak", "ebbe", "egy", "egész", "ember",
+- "ennek", "épp", "erre", "eset", "ezer", "ezért", "ezt", "fel", "fog", "for",
+- "fél", "hely", "hisz", "hogy", "idő", "igen", "így", "ilyen", "itt",
+- "kap", "kell", "kép", "kér", "két", "köz", "lát", "lehet", "mag", "majd",
+- "meg", "mert", "min", "mit", "mond", "most", "még", "már", "más", "nagy",
+- "nap", "neki", "nem", "olyan", "össze", "ott", "rész", "sem", "sok", "sor",
+- "szer", "szét", "szám", "száz", "szó", "tart", "tel", "tesz", "tud",
+- "több", "tör", "úgy", "ugyan", "után", "vagy", "val", "van", "vesz",
+- "vis", "volt" };
++char *hwords[MAXW] = {
++ " a "," az "," és "," hogy "," is "," nem "," egy "," meg "," de "," csak ",
++ " vagy "," van "," volt "," már "," ha "," kell "," még "," el "," ez ",
++ " mint "," azt "," ki "," akkor "," sem "," lehet "," be "," mert "," s ",
++ " minden "," olyan "," szerint "," új "," pedig "," ezt "," így "," után ",
++ " úgy "," nagy "," jó "," fel "," majd "," két "," nagyon "," aki "," most ",
++ " több "," lesz "," itt "," én "," magyar "," ami "," első "," között ",
++ " amely "," hanem "," mi "," nincs "," más "," illetve "," alatt "," egyik ",
++ " volna "," amit "," arra "," ilyen "," azonban "," le "," sok "," való ",
++ " által "," amikor "," ne "," számára "," valamint "," azért "," akik ",
++ " saját "," jól "," ember "," ahol "," ott "," annak "," vagyok "," mindig ",
++ " miatt "," mellett "," kis "," -e "," alapján"," lenne "," e "," ő ",
++ " mit "," vannak "," előtt "," egész "," át "," nélkül "," lett "," ezért ",
++ " év "," igen "," másik "," stb. "," teljes "," néhány "," során "," rá ",
++ " ma "," hiszen "," milyen "," mely "," mind "," valami "," viszont ",
++ " áll "," tehát "," inkább "," legyen "," tudom "," amelyek "," éves ",
++ " ezek "," adott "," nagyobb "," például "," szükséges "," együtt "," azok ",
++ " akár "," tovább "," ennek "," nekem "," megfelelő "," őket "," szó ",
++ " se "," Ft "," elég "," hozzá "," erre "," neki "," ezzel "," következő ",
++ " esetén "," mivel "," ezen "," belül "," éppen "," közül "," fontos ",
++ " jobb "," benne "," esetben "," talán "," különböző "," program "," te ",
++ " voltak "," fog "," teljesen "," pl. "," maga "," rendszer "," egyes ",
++ " található "," vele "," ebben "," kellett "," második "," túl "," egyre ",
++ " arról "," valaki "," óta "," emberek "," egyéb "," ahogy "," semmi ",
++ " tudja "," azzal "," ugyanis "," került "," ellen "," mondta "," miért ",
++ " aztán "," című "," kicsit "," módon "," vissza "," bár "," világ ",
++ " abban "," legnagyobb "," legalább "," mindenki "," jelent "," újra ",
++ " persze "," részt "," tud "," kívül "," eddig "," össze "," keresztül ",
++ " biztos "," utolsó "," isten "," idő "," azon "," kerül "," szinte ",
++ " egyetlen "," dolog "," szép "," mikor "," mégis "," érdekében "," felé ",
++ " mai "," szemben "," sokkal "," jog" };
+ 
+ 
+ void strextr(const char *s, char *dst)
