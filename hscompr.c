@@ -92,7 +92,8 @@ void strcompr(const char *str, char *cpr)
     j =0;
     for (i=0; i<lim; i++)
     {
-        if ((isdigit(str[i]) && isdigit(str[i+1]) && isdigit(str[i+2])))
+        if (((str[i] != 'í') && (str[i+1] != 'í') && (str[i+2] != 'í'))
+        &&  (isdigit(str[i]) && isdigit(str[i+1]) && isdigit(str[i+2])))
         {
             x = 100 * (str[i] - '0');
             x += 10 * (str[i+1] - '0');
